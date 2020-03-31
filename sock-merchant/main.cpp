@@ -5,7 +5,6 @@ using namespace std;
 
 vector<string> split_string(string);
 
-// Complete the sockMerchant function below.
 int sockMerchant(int n, vector<int> ar) {
     vector<int> socksNumb(100);
     for (int i = 0; i < 100; i++){
