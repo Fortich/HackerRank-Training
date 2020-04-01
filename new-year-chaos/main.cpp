@@ -11,6 +11,8 @@ vector<string> split_string(string);
  * 
  * I have to check how many people is ahead of me and shouldn't
  * 
+ * Modification: if person is ahead, there is no sense in reviewing it
+ * 
 */
 void minimumBribes(vector<int> q) {
     int acum = 0;
@@ -19,10 +21,12 @@ void minimumBribes(vector<int> q) {
             printf("Too chaotic\n");  
             return;     
         }
-        for (int j = max(0,q[i]-2); j < i; j++){
-            if(q[j] > q[i]){
-                acum++;
-            }
+        if (q[i] -(i+1) <= 0){
+            for (int j = max(0,q[i]-2); j < i; j++){
+                if(q[j] > q[i]){
+                    acum++;
+                }
+            }   
         }
     }
     printf("%d\n",acum);
